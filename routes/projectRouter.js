@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
 
 router.delete('/:projectID', validateProjectId, async (req, res) => {
   try {
-      let project = await projectDB.remove(req.params.projectID);
-      res.status(200).json(project)
+      await projectDB.remove(req.params.projectID);
+      res.status(200).json(req.project)
 
   }
   catch(err) {
