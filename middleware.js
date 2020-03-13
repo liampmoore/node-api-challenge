@@ -20,7 +20,7 @@ catch(err) {
 const validateActionId = async (req, res, next) => {
     try {
         let action = await actionDB.get(req.params.actionID);
-        if (project) {
+        if (action) {
             req.action = action
             next()
         }
