@@ -38,7 +38,6 @@ router.delete('/:actionID', validateActionId, async (req, res) => {
   try {
       let action = await actionDB.remove(req.params.actionID);
       res.status(200).json(req.action)
-
   }
   catch(err) {
     console.error(err)
